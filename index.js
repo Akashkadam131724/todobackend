@@ -4,28 +4,22 @@ config();
 import express from "express";
 import ConnectDB from "./src/db/db.js";
 
-// Routes-----------------------
 import ToDoRoute from "./src/routes/todo.js";
-
-// -----------------------
+import TickerRoute from "./src/routes/ticker.js";
 
 const app = express();
-
-// middleware --------------------------------
 app.use(express.json());
-//---------------
 
 const DB = process.env.DB;
 const PORT = process.env.PORT || 4000;
 
 app.get("/", (req, res) => {
-  res.send("??hello world");
+  res.send(`<h1>Hello world</h1>`);
 });
 
 app.use("/todo", ToDoRoute);
+app.use("/ticker", TickerRoute);
 
-// connect to Db and listen on port
 app.listen(PORT, async () => {
   await ConnectDB(DB);
-  console.log("listening on Port", ", " + PORT);
 });
