@@ -1,20 +1,31 @@
-require("dotenv").config();
-const express = require("express");
+// imports
+import { config } from "dotenv";
+config();
+import express from "express";
+import ConnectDB from "./src/db/db.js";
+
+// Routes-----------------------
+import ToDoRoute from "./src/routes/todo.js";
+
+// -----------------------
+
 const app = express();
-const port = process.env.PORT || 4000;
+
+// middleware --------------------------------
+app.use(express.json());
+//---------------
+
+const DB = process.env.DB;
+const PORT = process.env.PORT || 4000;
 
 app.get("/", (req, res) => {
-  res.send("Hello World!2");
+  res.send("??hello world");
 });
 
-app.get("/twitter", (req, res) => {
-  res.send("Hello Twitter");
-});
+app.use("/todo", ToDoRoute);
 
-app.get("/login", (req, res) => {
-  res.send("<h1>Hello Login page</h1>");
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+// connect to Db and listen on port
+app.listen(PORT, async () => {
+  await ConnectDB(DB);
+  console.log("listening on Port", ", " + PORT);
 });
