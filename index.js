@@ -5,7 +5,7 @@ import express from "express";
 import ConnectDB from "./src/db/db.js";
 
 import ToDoRoute from "./src/routes/todo.js";
-import TickerRoute from "./src/routes/ticker.js";
+import CountryRoute from "./src/routes/country.js";
 
 const app = express();
 app.use(express.json());
@@ -18,8 +18,12 @@ app.get("/", (req, res) => {
 });
 
 app.use("/todo", ToDoRoute);
-app.use("/ticker", TickerRoute);
+app.use("/country", CountryRoute);
 
 app.listen(PORT, async () => {
-  await ConnectDB(DB);
+  try {
+    await ConnectDB(DB);
+  } catch (err) {
+    console.log(err.message);
+  }
 });
