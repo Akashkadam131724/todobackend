@@ -5,11 +5,14 @@ import {
   getAllCountry,
   getCountryById,
   updateCountry,
-  searchCountry,
   deleteCountryById,
   deleteAllCountries,
-  suggestCountryName,
 } from "../controllers/country/country.js";
+
+import {
+  searchCountry,
+  suggestCountryName,
+} from "../controllers/country/search-filter.js";
 
 const router = express.Router();
 
