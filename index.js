@@ -4,7 +4,6 @@ config();
 import express from "express";
 import ConnectDB from "./src/db/db.js";
 
-import ToDoRoute from "./src/routes/todo.js";
 import CountryRoute from "./src/routes/country.js";
 
 const app = express();
@@ -17,7 +16,6 @@ app.get("/", (req, res) => {
   res.send(`<h1>Hello world</h1>`);
 });
 
-app.use("/todo", ToDoRoute);
 app.use("/country", CountryRoute);
 
 app.listen(PORT, async () => {
