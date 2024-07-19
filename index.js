@@ -2,6 +2,7 @@ import { config } from "dotenv";
 import express from "express";
 import ConnectDB from "./src/db/db.js";
 import CountryRoute from "./src/routes/country.js";
+import FooterRoute from "./src/routes/footer/footer.js";
 import specs from "./swaggerOptions.js"; //
 import swaggerUi from "swagger-ui-express"; // Corrected import
 
@@ -22,6 +23,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/country", CountryRoute);
+app.use("/footer", FooterRoute);
 
 app.listen(PORT, async () => {
   try {
