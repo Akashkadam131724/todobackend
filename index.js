@@ -19,7 +19,7 @@ const DB = process.env.DB;
 const PORT = process.env.PORT || 3000; // Change PORT to 3000 if you want to run on localhost:3000
 
 app.get("/", (req, res) => {
-  res.send(`<h1>Hello world</h1>`);
+  res.send(`<h1>Hello world Akash</h1>`);
 });
 
 app.use("/country", CountryRoute);
