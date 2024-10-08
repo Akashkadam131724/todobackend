@@ -54,7 +54,7 @@ router.get("/", async function (req, res) {
 router.get("/footer-levels", async function (req, res) {
   try {
     // Fetch all FooterLevel documents and populate the footer field
-    const footerLevels = await FooterLevel.find().populate("footer").exec();
+    const footerLevels = await FooterLevel.find().populate("footer");
 
     // Send the response
     res.status(200).send(footerLevels);
