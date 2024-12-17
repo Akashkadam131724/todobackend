@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js", 
-    "dev" : "npx nodemon"
+    "start": "node index.js",
+    "dev": "npx nodemon"
   },
   "type": "module",
   "keywords": [
@@ -16,6 +16,7 @@
   "author": "akash",
   "license": "ISC",
   "dependencies": {
+    "cloudinary": "^2.5.1",
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
     "mongoose": "^8.1.1",
