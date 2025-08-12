@@ -37,6 +37,13 @@ console.log(
   process.env.CLOUDINARY_API_SECRET
 );
 
+// PORT = 3000
+// DB = 127.0.0.1://127.0.0.1:27017/test
+// # DB = "mongodb://127.0.0.1:27017/test"
+// CLOUDINARY_CLOUD_NAME = dl94wdunf
+// CLOUDINARY_API_KEY = 832542161681699
+// CLOUDINARY_API_SECRET = sd2upohhvXKQ2E6GDYFdtj3vILI
+
 app.get("/", (req, res) => {
   res.send(`<h1>Hello world Akash</h1>`);
 });
